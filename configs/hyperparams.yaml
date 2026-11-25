@@ -1,0 +1,93 @@
+# ─────────────────────────────────────────────────────────────
+#  GNN Project: Hyperparameter Configuration
+#  "Across the Homophily Spectrum"
+# ─────────────────────────────────────────────────────────────
+
+# Global settings
+global:
+  seeds: [42, 123, 456, 789, 1024]
+  max_epochs: 500
+  patience: 50
+  device: auto  # 'cuda', 'cpu', or 'auto'
+
+# Dataset-specific settings
+datasets:
+  wikics:
+    root: ./data
+    split: predefined  # uses first of 20 splits
+  amazon-computers:
+    root: ./data
+    split: stratified  # 60/20/20 stratified split
+  roman-empire:
+    root: ./data
+    split: predefined  # uses first of 10 splits
+
+# Default model hyperparameters (overridden by validation tuning)
+models:
+  gatv2:
+    hidden_channels: 64
+    heads: 8
+    dropout: 0.6
+    num_layers: 2
+    lr: 0.005
+    weight_decay: 0.0005
+
+  graphsage:
+    hidden_channels: 64
+    dropout: 0.5
+    num_layers: 2
+    lr: 0.005
+    weight_decay: 0.0005
+
+  h2gcn:
+    hidden_channels: 64
+    dropout: 0.5
+    num_rounds: 1
+    lr: 0.01
+    weight_decay: 0.0005
+
+  mlp:
+    hidden_channels: 64
+    dropout: 0.5
+    num_layers: 2
+    lr: 0.01
+    weight_decay: 0.0005
+
+  random:
+    lr: 0.001
+    weight_decay: 0
+
+# Tuning grids (selected strictly using validation accuracy)
+tuning:
+  full:
+    lr: [0.001, 0.005, 0.01]
+    weight_decay: [0.0, 0.0005]
+    dropout: [0.3, 0.5, 0.7]
+    hidden_channels: [64, 128]
+    max_epochs: 150
+    patience: 20
+
+  quick:
+    lr: [0.005, 0.01]
+    weight_decay: [0.0005]
+    dropout: [0.5]
+    hidden_channels: [32]
+    max_epochs: 15
+    patience: 5
+
+# Robustness analysis settings (largest dataset: Roman-empire)
+robustness:
+  edge_drop_rates: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+  feature_noise_stds: [0.0, 0.1, 0.3, 0.5, 0.7, 1.0]
+  label_fractions: [0.05, 0.1, 0.2, 0.4, 1.0]
+  num_perturbation_runs: 5
+
+# Visualization settings
+visualization:
+  tsne:
+    perplexity: 30
+    max_iter: 1000
+    random_state: 42
+  figsize: [12, 8]
+  dpi: 180
+  style: seaborn-v0_8-darkgrid

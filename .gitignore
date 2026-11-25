@@ -1,0 +1,22 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Auto-downloaded datasets (~236 MB; re-downloaded automatically by PyG)
+data/
+
+# Environments & secrets
+.env
+.venv/
+venv/
+env/
+
+# Archives & OS files
+*.zip
+.DS_Store
+Thumbs.db
