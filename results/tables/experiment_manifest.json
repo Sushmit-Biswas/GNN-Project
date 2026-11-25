@@ -1,0 +1,72 @@
+{
+  "quick": true,
+  "seeds": [
+    42
+  ],
+  "device": "cpu",
+  "datasets": [
+    "amazon-computers",
+    "wikics",
+    "roman-empire"
+  ],
+  "models": [
+    "gatv2",
+    "graphsage",
+    "h2gcn",
+    "mlp",
+    "random"
+  ],
+  "validation_tuning": {
+    "amazon-computers:gatv2": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "amazon-computers:graphsage": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "amazon-computers:h2gcn": {
+      "lr": 0.005,
+      "dropout": 0.5
+    },
+    "amazon-computers:mlp": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "amazon-computers:random": {},
+    "wikics:gatv2": {
+      "lr": 0.005,
+      "dropout": 0.5
+    },
+    "wikics:graphsage": {
+      "lr": 0.005,
+      "dropout": 0.5
+    },
+    "wikics:h2gcn": {
+      "lr": 0.005,
+      "dropout": 0.5
+    },
+    "wikics:mlp": {
+      "lr": 0.005,
+      "dropout": 0.5
+    },
+    "wikics:random": {},
+    "roman-empire:gatv2": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "roman-empire:graphsage": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "roman-empire:h2gcn": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "roman-empire:mlp": {
+      "lr": 0.01,
+      "dropout": 0.5
+    },
+    "roman-empire:random": {}
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "amazon-computers": {
+    "gatv2": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "graphsage": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "h2gcn": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "mlp": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "random": {}
+  },
+  "wikics": {
+    "gatv2": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "graphsage": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "h2gcn": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "mlp": {
+      "lr": 0.005,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "random": {}
+  },
+  "roman-empire": {
+    "gatv2": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "graphsage": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "h2gcn": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "mlp": {
+      "lr": 0.01,
+      "weight_decay": 0.0005,
+      "dropout": 0.5,
+      "hidden_channels": 32
+    },
+    "random": {}
+  }
+}
